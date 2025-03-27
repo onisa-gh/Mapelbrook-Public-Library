@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapelbrook Public Library</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="Mapelbrook Public Library, written in Merriweather font" data-name="logo">
+            </a>
+        </div>
+        <nav class="flex nav-bar">
+            <!-- Navigation Menu -->
+            <ul class="menu flex">
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Services
+                    </a>
+                </li>
+                <li>
+                    <a href="programs.html">
+                        Programs
+                    </a>
+                </li>
+                <li>
+                    <a href="events.html">
+                        Events
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+            </ul>
+            <ul class="flex icons-bar">
+                <li class="away">
+                    <!-- burger icon -->
+                    <svg class="nav-icon" id="burger" data-name="burger" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <g>
+                            <rect x="45.65" y="51.87" width="93.27" height="6.22" />
+                            <rect x="45.65" y="76.74" width="93.27" height="6.22" />
+                            <rect x="45.65" y="101.61" width="93.27" height="6.22" />
+                            <rect x="45.65" y="126.48" width="93.27" height="6.22" />
+                        </g>
+                        <rect class="none" width="184.57" height="184.57" />
+                    </svg>
+                </li>
+                <li>
+                    <a href="events.html#calendar">
+                        <!-- Calendar Icon -->
+                        <svg class="nav-icon" id="calendaricon" data-name="calendar" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 184.57 184.57">
+                            <rect class="none" width="184.57" height="184.57" />
+                            <g>
+                                <rect class="none" x="80.77" y="103.35" width="23.04" height="10.25" />
+                                <rect class="none" x="51.72" y="103.35" width="23.04" height="10.25" />
+                                <rect class="none" x="80.77" y="87.09" width="23.04" height="10.25" />
+                                <rect class="none" x="80.77" y="119.6" width="23.04" height="10.25" />
+                                <rect class="none" x="51.72" y="87.09" width="23.04" height="10.25" />
+                                <rect class="none" x="109.82" y="87.09" width="23.04" height="10.25" />
+                                <rect class="none" x="51.72" y="62.19" width="81.14" height="18.89" />
+                                <rect class="none" x="109.82" y="119.6" width="23.04" height="10.25" />
+                                <rect class="none" x="109.82" y="103.35" width="23.04" height="10.25" />
+                                <rect class="none" x="51.72" y="119.6" width="23.04" height="10.25" />
+                                <path
+                                    d="M118.49,56.18v-7.47h0s-11.64,0-11.64,0h0v7.47h-29.11v-7.47h0s-11.64,0-11.64,0h0v7.47h-20.38v79.68h93.16V56.18h-20.38ZM51.72,87.09h23.04v10.25h-23.04v-10.25ZM80.77,113.59v-10.25h23.04v10.25h-23.04ZM103.8,119.6v10.25h-23.04v-10.25h23.04ZM80.77,97.34v-10.25h23.04v10.25h-23.04ZM51.72,103.35h23.04v10.25h-23.04v-10.25ZM51.72,119.6h23.04v10.25h-23.04v-10.25ZM132.85,129.85h-23.04v-10.25h23.04v10.25ZM132.85,113.59h-23.04v-10.25h23.04v10.25ZM132.85,97.34h-23.04v-10.25h23.04v10.25ZM51.72,81.08v-18.89h81.14v18.89H51.72Z" />
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="account.html">
+                        <!-- Account Icon -->
+                        <svg class="nav-icon" id="account" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 184.57 184.57">
+                            <rect class="none" width="184.57" height="184.57" />
+                            <g>
+                                <circle cx="92.29" cy="72.72" r="20.97" />
+                                <path
+                                    d="M135.67,132.82c-2.09-21.61-20.72-38.51-43.38-38.51s-41.29,16.9-43.38,38.51h86.77Z" />
+                            </g>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <!-- Search Icon -->
+                        <svg class="nav-icon" id="search" data-name="search" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 184.57 184.57">
+                            <rect class="none" width="184.57" height="184.57" />
+                            <path
+                                d="M134.11,119.86l-21.99-18.14c3.74-6.95,5.01-15.26,2.96-23.53-4.37-17.7-22.27-28.51-39.97-24.13-17.7,4.37-28.51,22.27-24.13,39.97,4.37,17.7,22.27,28.51,39.97,24.13,3.86-.95,7.4-2.55,10.52-4.65l22.54,18.6c3.38,2.79,8.38,2.31,11.17-1.07,2.79-3.38,2.31-8.38-1.07-11.17ZM87.69,104.96c-10.41,2.57-20.94-3.78-23.51-14.19-2.57-10.41,3.78-20.94,14.19-23.51,10.41-2.57,20.94,3.78,23.51,14.19,2.57,10.41-3.78,20.94-14.19,23.51Z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="flex carousel">
+            <!-- Slide 1 -->
+            <input type="radio" id="cardslide" name="slide" checked>
+            <div class="grid hero">
+                <img src="img/home-hero-card.jpg"
+                    alt="a female hand using a card with the library name on it, on a card reader than a male hand is handing, on a wooden table">
+                <h2>Enjoy All Services</h2>
+                <h4>& Unlock Free Workshops</h4>
+                <button>Get A Card Today</button>
+            </div>
+
+            <!-- Slide 2 -->
+            <input type="radio" id="acesslide" name="slide">
+            <div class="grid hero">
+                <img src="img/hero-access.jpg"
+                    alt="a man with visual disability using the accessible services in a lab in a library">
+                <h2>Access for All!</h2>
+                <h4>Discover Our Accessible Library Tools</h4>
+                <button>Learn More</button>
+            </div>
+
+            <!-- Slide 3 -->
+            <input type="radio" id="prodslide" name="slide">
+            <div class="grid hero">
+                <img src="img/hero-study.jpg" alt="a woman studying at a library surrounded by books">
+                <h2>Free Study Spaces!</h2>
+                <h4>Spaces for Group Work and Study Sessions</h4>
+                <button>Reserve a Space Today</button>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="radios flex">
+                <label for="cardslide"></label>
+                <label for="acesslide"></label>
+                <label for="prodslide"></label>
+            </div>
+        </section>
+
+
+        <!-- PROGRAMS SECTION -->
+        <section class="flex programs">
+            <div class="flex title">
+                <div class="line"></div>
+                <h3>
+                    PROGRAMS
+                </h3>
+                <div class="line"></div>
+            </div>
+            <article class="grid popular">
+                <h4>
+                    Most Popular
+                </h4>
+                <img src="img/job-workshop.jpg"
+                    alt="a bunch of people talking and looking at thier laptop, around a wooden table">
+                <h4>
+                    Job Skills Workshop
+                </h4>
+                <p>
+                    Get interview skills and help with resume building to boost your confidence and stand out to
+                    employers. Learn how to tailor your resume to highlight your strengths and leave a lasting
+                    impression during interviews.
+                </p>
+                <button>
+                    Join Now
+                </button>
+            </article>
+
+            <div class="flex cards programs-cards wrapper">
+                <article class="procard grid">
+                    <img src="img/pro-cook.jpg"
+                        alt="a man cooking in a cooking class, with another person beside him also cooking">
+                    <h5>
+                        Cooking Class
+                    </h5>
+                    <button>
+                        Register
+                    </button>
+                </article>
+                <article class="procard grid">
+                    <img src="img/pro-youth.jpg"
+                        alt="an older woman sitting beside a younger woman looking a computer screen">
+                    <h5>
+                        Youth Mentorship
+                    </h5>
+                    <button>
+                        Apply Now
+                    </button>
+                </article>
+                <article class="procard grid">
+                    <img src="img/pro-creative.jpg"
+                        alt="a woman is writing on a board with two men beside her looking at what she is writing">
+                    <h5>
+                        Creative Writing
+                    </h5>
+                    <button>
+                        Wait List
+                    </button>
+                </article>
+                <a href="programs.html" class="procard grid">
+
+                    <h5>
+
+                        MORE Programs
+
+                    </h5>
+                </a>
+            </div>
+        </section>
+
+        <!-- EVENTS SECTION -->
+        <section class="events flex">
+            <div class="title flex">
+                <div class="line"></div>
+                <h3>
+                    EVENTS
+                </h3>
+                <div class="line"></div>
+            </div>
+            <div class="flex cards events-cards wrapper">
+                <article class="evecard grid">
+                    <h5>
+                        DEC, 15th
+                    </h5>
+                    <img src="img/eve-gard.jpg" alt="soil with a tiny shovel and a plant">
+                    <h5>
+                        Gardening Day
+                    </h5>
+                </article>
+
+                <article class="evecard grid">
+                    <h5>
+                        DEC, 18th
+                    </h5>
+                    <img src="img/eve-crafts.jpg" alt="handmade bookmarks with brushes and colors">
+                    <h5>
+                        DIY Craft Fair
+                    </h5>
+                </article>
+
+                <article class="evecard grid">
+                    <h5>
+                        DEC, 22th
+                    </h5>
+                    <img src="img/eve-movie.jpg"
+                        alt="people sitting on the ground looking at a set up white screen with light surrounding it">
+                    <h5>
+                        Movie Night
+                    </h5>
+                </article>
+
+                <article class="evecard grid">
+                    <h5>
+                        DECEMBER
+                    </h5>
+
+                    <a href="events.html">
+                        <img src="img/eve-empty.jpg" alt="just an empty placeholder">
+                        <h5>
+                            Check Other Events
+
+                        </h5>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+    <footer class="grid">
+
+
+
+        <ul class="foot-iconbar flex">
+            <!-- Footer Icon Bar -->
+            <li>
+                <a href="#">
+                    <svg id="news" class="nav-icon" data-name="news" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <rect class="none" width="184.57" height="184.57" />
+                        <path
+                            d="M119.41,52.18h-58.97v80.2h63.69V52.18h-4.72ZM114.7,112.7h-44.82v-4.81h44.82v4.81ZM114.7,95.29h-44.82v-4.81h44.82v4.81ZM114.7,77.87h-44.82v-4.81h44.82v4.81Z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg id="time" class="nav-icon" data-name="time" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <rect class="none" width="184.57" height="184.57" />
+                        <path
+                            d="M92.29,51.87c-22.32,0-40.42,18.1-40.42,40.42s18.1,40.42,40.42,40.42,40.42-18.1,40.42-40.42-18.1-40.42-40.42-40.42ZM93.59,94.89h-2.61v-27.38h5.22v22.16h27.38v5.22h-29.99Z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg id="contact" class="nav-icon" data-name="contact" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <rect class="none" width="184.57" height="184.57" />
+                        <path
+                            d="M136.55,69.19c0-9.57-7.76-17.32-17.32-17.32s-17.32,7.76-17.32,17.32c0,7.76,5.1,14.32,12.12,16.53h0s0,0,0,0h0c-2.58,5.1-6.01,10.65-10.2,15.23-4.71,5.14-13.2,8.92-21.42,11.5-1.4-8.17-8.51-14.38-17.07-14.38-9.57,0-17.32,7.76-17.32,17.32s7.76,17.32,17.32,17.32c2.94,0,5.71-.73,8.13-2.02h0c10.1-2.35,30.32-9.49,40.94-20.11,8.81-8.81,16.07-22.92,19.48-32.17h0s0,0,0,0c1.68-2.67,2.65-5.83,2.65-9.21Z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg id="map" class="nav-icon" data-name="map" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <rect class="none" width="184.57" height="184.57" />
+                        <path
+                            d="M92.29,51.72c-12.57,0-22.76,10.19-22.76,22.76,0,5.29,1.8,10.16,4.83,14.02l17.93,44.35,17.93-44.35c3.03-3.86,4.83-8.73,4.83-14.02,0-12.57-10.19-22.76-22.76-22.76ZM92.29,85.36c-6.01,0-10.88-4.87-10.88-10.88s4.87-10.88,10.88-10.88,10.88,4.87,10.88,10.88-4.87,10.88-10.88,10.88Z" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="flex social">
+            <li>
+                <a href="#">
+                    <svg id="facebook" data-name="facebook" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <rect class="none" width="184.57" height="184.57" />
+                        <g>
+                            <path
+                                d="M136.61,92.29c0-24.47-19.84-44.31-44.31-44.31s-44.31,19.84-44.31,44.31c0,20.78,14.31,38.22,33.61,43.01v-29.47h-9.14v-13.54h9.14v-5.83c0-15.08,6.83-22.07,21.63-22.07,2.81,0,7.65.55,9.63,1.1v12.28c-1.05-.11-2.86-.17-5.12-.17-7.27,0-10.07,2.75-10.07,9.91v4.79h14.47l-2.49,13.54h-11.99v30.45c21.94-2.65,38.94-21.33,38.94-43.99Z" />
+                            <path class="none"
+                                d="M109.66,105.83l2.49-13.54h-14.47v-4.79c0-7.16,2.81-9.91,10.07-9.91,2.26,0,4.07.06,5.12.17v-12.28c-1.98-.55-6.83-1.1-9.63-1.1-14.81,0-21.63,6.99-21.63,22.07v5.83h-9.14v13.54h9.14v29.47c3.43.85,7.01,1.3,10.7,1.3,1.82,0,3.61-.11,5.37-.32v-30.45h11.99Z" />
+                        </g>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg id="insta" data-name="insta" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.57 184.57">
+                        <rect class="none" width="184.57" height="184.57" />
+                        <path
+                            d="M73.93,48.27c-4.72.22-7.94.98-10.75,2.08-2.91,1.14-5.38,2.66-7.84,5.12-2.46,2.47-3.97,4.94-5.1,7.86-1.09,2.82-1.83,6.04-2.04,10.76-.21,4.73-.25,6.23-.23,18.27.02,12.03.08,13.54.3,18.27.23,4.71.98,7.93,2.08,10.75,1.14,2.91,2.66,5.38,5.13,7.84,2.47,2.46,4.94,3.97,7.86,5.1,2.82,1.09,6.04,1.83,10.76,2.04,4.73.21,6.24.25,18.27.23,12.04-.02,13.55-.08,18.27-.3,4.72-.23,7.93-.98,10.75-2.08,2.91-1.14,5.38-2.66,7.84-5.13,2.46-2.47,3.97-4.94,5.09-7.86,1.09-2.82,1.83-6.04,2.04-10.76.21-4.73.26-6.24.23-18.27-.02-12.03-.08-13.54-.3-18.27-.22-4.72-.98-7.94-2.08-10.75-1.14-2.91-2.66-5.38-5.12-7.84-2.47-2.46-4.94-3.97-7.86-5.09-2.82-1.09-6.04-1.84-10.76-2.04-4.73-.21-6.24-.26-18.27-.23-12.03.02-13.54.07-18.27.3M74.45,128.39c-4.32-.19-6.67-.91-8.23-1.51-2.07-.8-3.55-1.76-5.1-3.31-1.55-1.55-2.52-3.02-3.32-5.09-.61-1.56-1.34-3.91-1.54-8.23-.22-4.67-.27-6.07-.29-17.91-.02-11.83.02-13.23.22-17.91.19-4.32.91-6.67,1.51-8.23.8-2.07,1.76-3.55,3.31-5.1,1.55-1.56,3.02-2.52,5.09-3.32,1.56-.61,3.91-1.34,8.22-1.54,4.67-.22,6.07-.27,17.9-.29,11.83-.02,13.23.02,17.91.22,4.32.19,6.67.9,8.23,1.51,2.07.8,3.55,1.76,5.1,3.31,1.55,1.55,2.52,3.02,3.33,5.09.61,1.56,1.34,3.9,1.54,8.22.22,4.67.27,6.08.29,17.91.02,11.83-.02,13.23-.23,17.91-.19,4.32-.9,6.67-1.51,8.23-.8,2.07-1.76,3.55-3.31,5.1-1.55,1.55-3.02,2.52-5.09,3.32-1.56.61-3.91,1.34-8.22,1.54-4.67.22-6.07.27-17.91.29-11.83.02-13.23-.02-17.91-.22M110.58,68.6c0,2.94,2.39,5.31,5.33,5.31,2.94,0,5.31-2.39,5.31-5.33,0-2.94-2.39-5.31-5.33-5.31-2.94,0-5.31,2.39-5.31,5.33M69.53,92.33c.02,12.57,10.23,22.73,22.8,22.71,12.57-.02,22.74-10.23,22.71-22.8-.02-12.56-10.23-22.74-22.8-22.71-12.57.02-22.73,10.23-22.71,22.8M77.51,92.31c-.01-8.16,6.59-14.78,14.74-14.8,8.16-.02,14.79,6.58,14.8,14.74.02,8.16-6.59,14.78-14.75,14.8-8.16.02-14.78-6.59-14.8-14.74" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg id="twitter" data-name="twitter" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <rect class="none" width="184.57" height="184.57" />
+                        <path
+                            d="M100.54,85.5l32.29-37.53h-7.65l-28.03,32.59-22.39-32.59h-25.83l33.86,49.28-33.86,39.36h7.65l29.61-34.41,23.65,34.41h25.83l-35.12-51.1h0ZM90.06,97.68l-3.43-4.91-27.3-39.05h11.75l22.03,31.51,3.43,4.91,28.64,40.96h-11.75l-23.37-33.42h0Z" />
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg id="youtube" data-name="youtube" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 184.57 184.57">
+                        <path
+                            d="M133.09,71.65c-.98-3.69-3.87-6.59-7.53-7.58-6.64-1.79-33.27-1.79-33.27-1.79,0,0-26.63,0-33.27,1.79-3.66.99-6.55,3.89-7.53,7.58-1.78,6.68-1.78,20.63-1.78,20.63,0,0,0,13.95,1.78,20.63.98,3.69,3.87,6.59,7.53,7.58,6.64,1.79,33.27,1.79,33.27,1.79,0,0,26.63,0,33.27-1.79,3.66-.99,6.55-3.89,7.53-7.58,1.78-6.68,1.78-20.63,1.78-20.63,0,0,0-13.95-1.78-20.63ZM83.58,104.95v-25.32l22.26,12.66-22.26,12.66Z" />
+                        <rect class="none" width="184.57" height="184.57" />
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+        <div class="logo">
+            <img src="img/logo.svg" alt="Mapelbrook Public Library, written in Merriweather font" data-name="logo">
+        </div>
+
+
+
+
+        <nav>
+            <ul class="flex">
+                <li>
+                    <a href="#">
+                        Careers and Jobs
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Privacy Statement
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Terms of Services
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

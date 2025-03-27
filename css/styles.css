@@ -1,0 +1,1558 @@
+/* ----- Imports */
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ----- Variables */
+:root {
+    --pri: #2C3E50;
+    --sec: #8DAA37;
+    --acc: #F1C40F;
+    --whi: #FFFFFF;
+    --tpri: rgba(17, 39, 61, 0.7);
+    --hd: "Merriweather", serif;
+    --bdy: "Libre Franklin", sans-serif;
+
+    --mar: 6%;
+}
+
+/* ----- Default */
+
+* {
+    box-sizing: border-box;
+    /* Includes padding and border in the element's size */
+    margin: auto;
+    /* Centers the element within its parent */
+    color: var(--pri);
+    /* change every text to ve in this color by default */
+    transition: all 1s;
+    /* gives a smooth transtion for everything that has transtion */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--hd);
+    font-weight: 650;
+    line-height: 150%;
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 550;
+}
+
+p {
+    font-family: var(--bdy);
+    font-size: 1rem;
+    line-height: 1.2rem;
+    /* this set the space between th elines in a paragraph */
+    margin: .4em 0;
+}
+
+a {
+    font-family: var(--hd);
+    text-decoration: none;
+    /* remove the default underline for the links */
+}
+
+a:hover {
+    color: var(--sec);
+    /* change all the links to this color when hovered */
+}
+
+a:active {
+    color: var(--acc);
+    /* change all the links to this color when active */
+}
+
+.wrapper {
+    max-width: 85vw;
+    margin: auto;
+    /* wrap the emeents into a max width so they won't gorw so big for the big screens */
+}
+
+.flex {
+    display: flex;
+    /* I have used this class while writing the html to make it easier for me to imagin it */
+}
+
+.grid {
+    display: grid;
+    /* I have used this class while writing the html to make it easier for me to imagin it */
+}
+
+button {
+    font-size: 1rem;
+    font-family: var(--hd);
+    font-weight: 650;
+    width: 100%;
+    background-color: var(--acc);
+    border-color: var(--acc);
+    cursor: pointer;
+    /* change the mouse to the hand thing when hoverd over */
+}
+
+button:active,
+button:focus {
+    background-color: var(--sec);
+    border-color: var(--sec);
+    /* change the color of the button when active or focus */
+}
+
+img {
+    width: 100%;
+    height: auto;
+    /* setting each image to 100% width by default */
+}
+
+/* DEFAULTS ENDS HERE */
+
+/* --------------------------------------------------------- */
+
+/* HEADER & FOOTER | MOBILE & DESKTOP */
+
+/* ----- Header */
+
+header {
+    background-color: var(--pri);
+    text-align: center;
+    color: var(--whi);
+    overflow: hidden;
+    /* will crop any children that goes outside of it */
+}
+
+header .logo {
+    padding-top: 12%;
+    padding-bottom: var(--mar);
+    width: 40%;
+    margin: auto;
+    max-width: 50vw;
+}
+
+.nav-bar {
+    /* contains the icons (icons-bar) and the textual menu items (menu) */
+    flex-direction: column-reverse;
+    /* this direction will make everything sorted in the oppsisite of what they were sorted in the html */
+}
+
+
+.icons-bar,
+.foot-iconbar {
+    width: 100%;
+    background-color: var(--sec);
+    justify-content: center;
+    border: solid var(--whi);
+    border-width: .3em 0em;
+    max-width: 100vw;
+    /* make them not go wider than the view screen width */
+}
+
+
+.menu {
+    flex-direction: column;
+
+    opacity: 0;
+    max-height: 0;
+    /* making the height and the opacity 0 by default */
+
+    transition: all 1s;
+    /* this will make the transation from the default to the class added by js smooth */
+}
+
+.menu li {
+    height: 4em;
+}
+
+.menu a {
+    color: var(--pri);
+    background-color: var(--sec);
+    display: block;
+    width: 100%;
+    height: 4em;
+    padding: 1.5em;
+    font-weight: 800;
+}
+
+.menu a:hover,
+.nav-icon:hover {
+    background-color: var(--pri);
+    color: var(--whi);
+    fill: var(--whi);
+    /* changing the color of the menu icons and the menu items when hovered over */
+}
+
+.menu a:focus,
+.menu a:active,
+.nav-icon:focus,
+.nav-icon:active {
+    background-color: var(--acc);
+    color: var(--pri);
+    fill: var(--pri);
+    /* changing the color of the menu icons and the menu items when in focus or active */
+}
+
+
+/* ----- Header | Icons */
+
+.nav-icon {
+    height: 4em;
+    padding: .2em .7em;
+    fill: var(--pri);
+    display: block;
+    background-color: var(--sec);
+    border-left: solid var(--whi) .2em;
+    /* I have put the border only on the left so it would be have the same look and width */
+    max-width: 25vw;
+}
+
+
+#search,
+#map {
+    border-right: solid var(--whi) .2em;
+    /* I added the border on the right just for the last icons so it would look closed */
+}
+
+.none {
+    fill: none;
+    /* a class to remove the fill from the svg paths */
+}
+
+.menu.show {
+    opacity: 1;
+    max-height: 23em;
+    /* this class will be added when clicked in js and will chnage the opacity and the max height */
+}
+
+/* HEADER ENDS HERE */
+
+/* ----- Footer */
+
+footer {
+    background-color: var(--pri);
+    color: var(--whi);
+    row-gap: 2em;
+    grid-template-areas:
+        "icon icon"
+        "social name"
+        "nav nav";
+    overflow: hidden;
+    align-items: center;
+}
+
+
+.foot-iconbar {
+    grid-area: icon;
+}
+
+.social {
+    grid-area: social;
+    justify-content: flex-start;
+    /* make the all of the elements sit at the start */
+    padding-left: 4%;
+    max-width: 50vw;
+}
+
+.social svg {
+    fill: var(--whi);
+    width: 3em;
+    max-width: 10vw;
+}
+
+footer .logo {
+    grid-area: name;
+    width: 10em;
+    justify-self: end;
+    text-align: center;
+    display: block;
+    padding-right: 5%;
+    max-width: 40vw;
+}
+
+footer nav {
+    grid-area: nav;
+    padding: 5%;
+    text-align: center;
+}
+
+footer ul {
+    justify-content: space-between;
+}
+
+footer nav li a {
+    font-family: var(--bdy);
+    display: block;
+    color: var(--whi);
+    font-size: .8rem;
+}
+
+footer nav li a:hover,
+footer nav li a:active,
+footer nav li a:focus {
+    color: var(--acc);
+}
+
+/* FOOTER ENDS HERE */
+
+/* ----- Desktop | Defaults, Header, Footer Query */
+@media only screen and (min-width: 47em) {
+
+    :root {
+        --mar: 3%;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    header .logo {
+        padding-top: 4%;
+        padding-bottom: 2%;
+        width: 20%;
+    }
+
+    .away,
+    #burger {
+        display: none;
+    }
+
+    .nav-bar {
+        justify-content: center;
+        width: 100%;
+        background-color: var(--sec);
+        border: solid var(--whi);
+        border-width: .3em 0em;
+    }
+
+    .nav-bar,
+    .menu {
+        flex-direction: row;
+    }
+
+    .menu {
+        justify-content: flex-end;
+        width: fit-content;
+        height: fit-content;
+        opacity: 1;
+        max-height: none;
+        /* giving back the default properties for the menu */
+    }
+
+    .menu a {
+        height: 4em;
+    }
+
+    .icons-bar {
+        background-color: transparent;
+        border: none;
+        width: fit-content;
+        justify-content: flex-start;
+    }
+
+    .nav-icon {
+        border: none;
+    }
+
+    header nav ul li {
+        border-left: solid var(--whi) .2em;
+    }
+
+    /* DESKTOP | WRAPPER */
+    .wrapper {
+        max-width: 70vw;
+        margin: auto;
+    }
+
+    /* DESKTOP | Footer */
+
+    footer {
+        padding: var(--mar) 7%;
+        grid-template-areas:
+            "social name icon"
+            "nav nav nav";
+    }
+
+    .social {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    footer .logo {
+        justify-self: center;
+        width: 12em;
+    }
+
+    .foot-iconbar {
+        justify-content: flex-end;
+        background-color: transparent;
+        border: none;
+    }
+
+    .foot-iconbar svg {
+        background-color: transparent;
+        border: none;
+        width: 4em;
+        padding: 0;
+        fill: var(--whi);
+    }
+
+    #map {
+        border: none;
+    }
+
+    .social svg {
+        width: 4em;
+    }
+
+    footer svg:hover,
+    footer svg:active,
+    footer svg:focus,
+    footer .nav-icon:hover,
+    footer .nav-icon:active,
+    footer .nav-icon:focus {
+        fill: var(--acc);
+        background-color: transparent;
+    }
+
+    footer nav {
+        padding: 1.2em;
+    }
+
+}
+
+/* DESKTOP | HEADER & FOOTER | ENDS HERE */
+
+/* --------------------------------------------------------- */
+
+/* --------------- HOMEPAGE  ---------------*/
+
+/* ----- Hero Carousel*/
+
+.carousel {
+    position: relative;
+}
+
+/* ----- Hero Banner */
+
+.hero {
+    display: none;
+    /* All slides are hidden by default */
+    width: 100vw;
+    height: 20em;
+    max-height: 40vh;
+    grid-template-columns: .2fr 1fr 2fr 1fr .2fr;
+    grid-template-rows: .2fr .5fr .5fr 1fr .5fr .4fr;
+    align-items: center;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    object-fit: cover;
+    grid-column: 1/6;
+    grid-row: 1/7;
+}
+
+.hero h2 {
+    color: var(--whi);
+    font-weight: 600;
+    grid-column: 2/5;
+    grid-row: 2/3;
+    align-self: self-end;
+}
+
+.hero h4 {
+    color: var(--whi);
+    font-weight: 500;
+    grid-column: 2/4;
+    grid-row: 3/4;
+    align-self: baseline;
+}
+
+.hero button {
+    padding: 2%;
+    grid-column: 3/5;
+    grid-row: 5/6;
+    font-size: 1.3rem;
+}
+
+.carousel .hero:nth-of-type(1) h2,
+.carousel .hero:nth-of-type(1) h4 {
+    font-weight: 700;
+    color: var(--pri);
+    /* chnaging the font weight and color only for the first slide */
+}
+
+
+/* Show the active slide */
+#cardslide:checked~.hero:nth-of-type(1),
+#acesslide:checked~.hero:nth-of-type(2),
+#prodslide:checked~.hero:nth-of-type(3) {
+    display: grid;
+    /* Show the grid layout for the active slide */
+}
+
+/* Radio Buttons */
+
+.carousel input[type="radio"] {
+    display: none;
+    appearance: none;
+    /* hide the original radio buttons */
+}
+
+.radios {
+    position: absolute;
+    bottom: 0.5em;
+    right: 5%;
+    z-index: 10;
+    gap: 1em;
+}
+
+.radios label {
+    /* styling the labels of the radio buttons */
+    width: 1em;
+    height: 1em;
+    background-color: var(--whi);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset -0.2em -0.2em 0.4em rgba(0, 0, 0, 0.2);
+    /* adding a bevel feel for the labels */
+}
+
+
+#cardslide:checked~.radios label[for="cardslide"],
+#acesslide:checked~.radios label[for="acesslide"],
+#prodslide:checked~.radios label[for="prodslide"] {
+    background-color: var(--sec);
+    /* color the highlithed one */
+    transform: scale(1.2);
+    /* Slightly bigger */
+    box-shadow: inset 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.2);
+    /* invert the bevel so it appears it is squeshed*/
+}
+
+
+
+/* ----- Programs Section */
+
+.programs {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.title {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.line {
+    /* this is the divider lines that come before and after a section title */
+    background-color: var(--sec);
+    width: 100%;
+    height: .3em;
+}
+
+/* Programs | Popular */
+.popular {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "title"
+        "ad"
+        "img"
+        "text"
+        "button";
+    background-color: var(--pri);
+    color: var(--whi);
+    align-items: center;
+    justify-content: center;
+}
+
+.popular h4:first-child {
+    grid-area: ad;
+    width: 100%;
+    height: 100%;
+    background-color: var(--sec);
+    text-align: center;
+    line-height: 250%;
+}
+
+.popular img {
+    grid-area: img;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.popular h4:nth-of-type(2) {
+    text-align: center;
+    grid-area: title;
+    align-self: self-start;
+    color: var(--whi);
+    padding: 1em;
+}
+
+.popular p {
+    grid-area: text;
+    color: var(--whi);
+    padding: 1em;
+}
+
+.popular button {
+    grid-area: button;
+    height: 100%;
+    padding: 1%;
+}
+
+/* Programs | Cards */
+.programs-cards {
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* make the items in the flex goes to another line if there are not enough space */
+}
+
+.procard {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    background-color: var(--pri);
+    width: 50%;
+    min-width: 10em;
+    /* don't let the card to go smaller than this */
+}
+
+.procard h5 {
+    padding: .4em;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: var(--whi);
+    background-color: var(--tpri);
+    background-blend-mode: multiply;
+    /* this to change the background color blend mode, but it seems it doesn't worke if the image is not a background image of the same element */
+    height: auto;
+}
+
+.procard img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    object-fit: cover;
+    /* crop the image if the image is bigger than the container */
+    transform-origin: center;
+    /* change the origin anchor point of it to be center */
+    height: 100%;
+    width: 100%;
+}
+
+.procard button {
+    grid-row: 2/3;
+    justify-self: end;
+    background-color: var(--sec);
+    border-color: var(--sec);
+    width: 100%;
+
+    padding: .5em 0;
+}
+
+.procard:last-child h5 {
+    background-color: transparent;
+    /* remove the background color that was set in general before for this specfic card */
+    grid-row: 1/3;
+    text-align: center;
+    align-self: center;
+}
+
+
+.procard:nth-child(2),
+.procard:nth-child(3) {
+    /* hide these cards in mobile view */
+    display: none;
+}
+
+.procard:hover {
+    width: 70%;
+    /* give the card a bigger width when hoverd over */
+}
+
+.procard:hover h5:not(:first-child) {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--pri);
+    font-weight: 800;
+    font-size: 150%;
+    /* change the color of the text and background when hovered of the card */
+}
+
+/* EVENTS SECTION */
+
+.events {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: var(--mar);
+}
+
+.events-cards {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1em;
+    text-align: center;
+    margin: 0;
+}
+
+.evecard {
+    width: 35%;
+    min-width: 10em;
+    height: 50%;
+    grid-template-columns: 1fr;
+    grid-template-rows: .7fr 2fr;
+}
+
+.evecard h5:first-child {
+    background-color: var(--sec);
+    padding: .4em;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.evecard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.evecard h5:last-child {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    color: var(--whi);
+    background-color: var(--tpri);
+    background-blend-mode: multiply;
+    /* tried it agin here still the same no difference */
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    padding: .3em;
+}
+
+.evecard a {
+    width: 100%;
+    height: auto;
+    color: var(--whi);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.evecard a img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 100%;
+}
+
+.evecard a h5:last-child {
+    background-color: transparent;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+
+}
+
+.evecard:hover h5:last-child {
+    background-color: transparent;
+}
+
+@media only screen and (min-width: 20em) {
+
+    .programs-cards {
+        flex-wrap: nowrap;
+        /* this will make the card back beside each other instead of stacked ina column */
+    }
+}
+
+@media only screen and (min-width: 31em) {
+    .procard:nth-child(2) {
+        /* shows this card in medium screen view */
+        display: grid;
+    }
+
+    .evecard {
+        /* change the size of the card in medium screen view */
+        width: 35%;
+        min-width: 8em;
+    }
+
+    .popular {
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1.5fr;
+        grid-template-rows: .4fr .3fr 1.3fr .3fr;
+        grid-template-areas:
+            "ad ad title"
+            "img img title"
+            "img img text"
+            "img img button";
+        background-color: var(--pri);
+        color: var(--whi);
+        align-items: center;
+    }
+
+    .popular h4:nth-of-type(2) {
+        text-align: left;
+    }
+}
+
+
+/* ----- DESKTOP | HOMEPAGE Content */
+@media only screen and (min-width: 50em) {
+
+    /* Homepage desktop screen */
+    /* Desktop | Hero banner */
+    .carousel {
+        gap: 2em;
+    }
+
+    .hero {
+        height: 40em;
+        max-height: 68vh;
+        margin: auto;
+        flex-basis: 100%;
+        grid-template-columns: .2fr 1fr 1fr 1fr .2fr;
+        grid-template-rows: .2fr .5fr .5fr 1fr .5fr .1fr;
+    }
+
+    .hero button {
+        grid-column: 4/5;
+        grid-row: 5/6;
+    }
+
+    .radios {
+        right: 6%;
+    }
+
+    /* Desktop | Programs section */
+
+    .popular {
+        height: 20em;
+        max-height: 40vh;
+    }
+
+    .programs-cards {
+        gap: 1.5em;
+        height: 20em;
+        max-height: 30vh;
+    }
+
+    .procard {
+        width: 30em;
+        height: 20em;
+        max-height: 30vh;
+    }
+
+    .procard img {
+        height: 100%;
+        max-height: 24.5vh;
+        width: 100%;
+    }
+
+    .procard button {
+        padding: 0;
+        height: 3em;
+    }
+
+    .procard:nth-child(2),
+    .procard:nth-child(3) {
+        /* showing this card in desktop */
+        display: grid;
+    }
+
+    .procard h5 a {
+        padding: 0;
+    }
+
+    .events-cards {
+        flex-wrap: nowrap;
+        /* remove the wrap in desktop view */
+        justify-content: space-between;
+        gap: 1.5em;
+    }
+
+}
+
+/* HOMEPAGE ENDS HERE */
+
+/* --------------------------------------------------------- */
+
+/* --------------- EVENTS PAGE  ---------------*/
+
+/* Featured section */
+.wrapper h1 {
+    margin: var(--mar) 0;
+}
+
+.garden {
+    gap: 1em;
+}
+
+.featured {
+    height: 15em;
+    width: 100%;
+    background-image: url(../img/eve-gard.jpg);
+    background-position: 0;
+    background-blend-mode: multiply;
+    /* it worked here since there is background img to the same element */
+    background-color: var(--tpri);
+    background-size: 100%;
+    /* background-attachment: fixed; */
+}
+
+.featured h3,
+.featured h4 {
+    color: var(--whi);
+    padding: 5% 0% 0% 5%;
+    /* Adds 5% padding on top and left, 0% on bottom and right */
+}
+
+.paragraph {
+    flex-direction: column;
+    line-height: 1.2em;
+    gap: 1em;
+}
+
+.featured button {
+    padding: 1em;
+}
+
+/* Other Events Section */
+.title {
+    margin-top: var(--mar);
+}
+
+.title h3 {
+    white-space: nowrap;
+    /* Prevents text from wrapping onto multiple lines */
+}
+
+.all-eve {
+    margin-top: var(--mar);
+    gap: 2em;
+}
+
+.eve-car {
+    padding: 1em;
+}
+
+.eve-car div {
+    justify-content: space-between;
+    padding: 1em 0;
+}
+
+.eve-car div h5 {
+    text-align: right;
+}
+
+.eve-car p:last-child {
+    font-weight: 600;
+    margin-top: 1em;
+    text-align: right;
+}
+
+.eve-car:nth-of-type(odd) {
+    background-color: var(--pri);
+    /* targeting only the cards that sorted as odd numbers and give them a backround color */
+}
+
+.eve-car:nth-of-type(odd) div h4,
+.eve-car:nth-of-type(odd) div h5,
+.eve-car:nth-of-type(odd) p {
+    color: var(--whi);
+    /* targeting only the cards that sorted as odd numbers and give the text inside of them this color*/
+}
+
+
+
+/* Events Page Desktop View */
+@media only screen and (min-width: 50em) {
+
+    .garden {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "img para"
+            "img button";
+    }
+
+    .featured {
+        height: 100%;
+        background-size: 30em;
+        grid-area: img;
+    }
+
+    .paragraph {
+        grid-area: para;
+    }
+
+    .garden button {
+        grid-area: button;
+    }
+
+    h1 {
+        margin: 2% 0;
+    }
+
+    .title {
+        margin-top: var(--mar);
+    }
+
+    .all-eve {
+        margin-top: var(--mar);
+        gap: 0;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .eve-car:nth-of-type(odd) {
+        background-color: transparent;
+        /* setting the colors back transparent in desktop view */
+    }
+
+    .eve-car:nth-of-type(odd) div h4,
+    .eve-car:nth-of-type(odd) div h5,
+    .eve-car:nth-of-type(odd) p {
+        color: var(--pri);
+        /* setting the colors of the text back in the desktop view */
+    }
+
+    .eve-car:first-child,
+    .eve-car:last-child {
+        background-color: var(--pri);
+        /* targeting only the first and last children to give them the background color */
+    }
+
+    .eve-car:first-child div h4,
+    .eve-car:last-child div h4,
+    .eve-car:first-child div h5,
+    .eve-car:last-child div h5,
+    .eve-car:first-child p,
+    .eve-car:last-child p {
+        color: var(--whi);
+    }
+}
+
+/* EVENTS PAGE ENDS HERE */
+
+/* --------------------------------------------------------- */
+
+/* --------------- ABOUT PAGE  ---------------*/
+
+
+.intro {
+    flex-direction: column;
+    gap: 2em;
+}
+
+
+.intro img {
+    width: 100%;
+    height: auto;
+    border-radius: 0 0 2em 2em;
+    /* gives a radius only for the bottom corners of the img */
+}
+
+.bg-blue {
+    background-color: var(--pri);
+    margin: var(--mar) 0;
+}
+
+.founders {
+    padding: var(--mar) 0;
+    grid-template-areas:
+        "text text"
+        "img1 img2";
+    gap: 2em;
+}
+
+.founders .found-text {
+    grid-area: text;
+}
+
+.founders div h3 {
+    color: var(--whi);
+    margin-bottom: var(--mar);
+}
+
+.founders div p {
+    color: var(--whi);
+}
+
+.founders .found-img img {
+    width: 100%;
+    position: relative;
+}
+
+.founders .found-img:first-of-type {
+    grid-area: img1;
+}
+
+.founders .found-img:last-of-type {
+    grid-area: img2;
+}
+
+/* img overlay */
+
+.found-img {
+    position: relative;
+    /* position the parent as relative so the children will be postioned related to it */
+    overflow: scroll;
+    /* changing teh overflow to scroll so when it is active on small screen teh text can be scrolled to */
+    border-radius: 20em;
+    border: .5em solid var(--acc);
+}
+
+.desc {
+    position: absolute;
+    /* remove the element from the original flow */
+    top: 0;
+    /* position the element on the far top of the nearest relative postion container */
+
+    height: 100%;
+    background-color: var(--tpri);
+    /* transparent background */
+    padding: 4%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    /* give the defualt obacity to fully transparent */
+}
+
+.desc h5 {
+    color: var(--whi);
+    font-size: 1rem;
+}
+
+.desc p {
+    font-size: .6rem;
+}
+
+.found-img:hover .desc,
+.found-img:active .desc,
+.found-img:focus .desc {
+    opacity: 1;
+    /* changeing the transparcy to full when it is hoverd, active or focus */
+}
+
+@media only screen and (min-width: 33em) {
+    .found-img {
+        overflow: hidden;
+        /* changing teh overflow to hidden when the screen is a bit bigger and can handle the text */
+    }
+
+
+    .desc p {
+        font-size: 1rem;
+        /* getting the text size back to normal when there is enough space */
+    }
+}
+
+/* img overlay ends */
+
+.know {
+    margin-bottom: var(--mar);
+}
+
+.know h3 {
+    margin-bottom: var(--mar);
+}
+
+/* About Desktop View */
+
+@media only screen and (min-width: 50em) {
+    .intro {
+        margin-top: var(--mar);
+        display: grid;
+        gap: 2em;
+        justify-content: center;
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    .intro img {
+        object-fit: cover;
+        height: 20em;
+        border-radius: 0em 2em 2em 0em;
+        /* changing the radius to the left corners of the img */
+    }
+
+    .bg-blue {
+        margin: var(--mar) 0;
+    }
+
+    .founders {
+        grid-template-areas:
+            "img1 img2 text";
+        /* changing teh grid layout in desktop view */
+        gap: 2em;
+    }
+
+    .know h3 {
+        margin-bottom: var(--mar);
+    }
+}
+
+/* ABOUT PAGE ENDS HERE */
+
+/* --------------------------------------------------------- */
+
+/* --------------- ACCOUNT PAGE  ---------------*/
+
+.account {
+    flex-direction: column;
+    gap: 1em;
+}
+
+.account h1 {
+    white-space: normal;
+}
+
+#greeting {
+    margin-bottom: var(--mar);
+}
+
+.login {
+    gap: .5em;
+    grid-template-areas:
+        "label1 label1"
+        "email email"
+        "label2 label2"
+        "pass pass"
+        "btn1 btn2"
+        "for for";
+    margin-bottom: var(--mar);
+}
+
+
+.login label:first-of-type {
+    grid-area: label1;
+}
+
+.login #email {
+    grid-area: email;
+}
+
+.login label:last-of-type {
+    grid-area: label2;
+}
+
+.login #password {
+    grid-area: pass;
+}
+
+.login a {
+    grid-area: for;
+    text-align: right;
+}
+
+.login button:first-of-type {
+    grid-area: btn1;
+    color: var(--whi);
+    background-color: var(--pri);
+    border-color: var(--pri);
+    border-radius: 0 0 0 1em;
+}
+
+.login button:last-of-type {
+    grid-area: btn2;
+    border-radius: 0 0 1em 0;
+}
+
+.login input {
+    width: 100%;
+    margin-bottom: 1em;
+    height: 3em;
+    border: .1em solid var(--pri);
+    border-radius: .2em;
+}
+
+.login button {
+    padding: .5em;
+}
+
+.why {
+    background-color: var(--pri);
+    flex-direction: column;
+    width: 100%;
+    padding: 2em;
+    position: relative;
+    justify-content: center;
+}
+
+.why img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    position: relative;
+    bottom: -2em;
+    right: -4em;
+    align-self: flex-end;
+}
+
+
+.why div h3,
+.why div p {
+    color: var(--whi);
+    margin-top: 5%;
+}
+
+
+@media only screen and (min-width: 55em) {
+
+    /* DESKTOP | ACCOUNT PAGE */
+    .account {
+        display: grid;
+        grid-template-rows: .3fr 1fr;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-areas:
+            "title why"
+            "form why";
+    }
+
+    .account section:first-of-type {
+        grid-area: form;
+        align-self: self-start;
+    }
+
+    .account h1 {
+        align-self: center;
+    }
+
+    .why {
+        grid-area: why;
+    }
+
+    .why img {
+        width: 20em;
+    }
+}
+
+@media only screen and (min-width: 90em) {
+
+    /* only changing this layout for the tthe screen bigger than 1440px wide */
+    .why {
+        flex-direction: row;
+    }
+}
+
+/* ACCOUNT PAGE ENDS HERE */
+
+/* --------------------------------------------------------- */
+
+
+/* --------------- PROGRAMS PAGE  ---------------*/
+
+.pro-pop {
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr .1fr 1fr .7fr .2fr;
+    align-items: center;
+    margin-bottom: var(--mar);
+}
+
+.pro-pop img {
+    grid-column: 1/2;
+    grid-row: 1/4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pro-pop h3 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    padding-left: 2%;
+    background-color: var(--sec);
+}
+
+.pro-pop h4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: var(--acc);
+    width: 100%;
+    height: 100%;
+    padding-left: 2%;
+}
+
+.pro-pop p {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.pro-pop button {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    height: 100%;
+}
+
+.collapse {
+    position: relative;
+    padding: 2%;
+    border: .3em solid var(--pri);
+}
+
+.fir .collapse:nth-of-type(odd) {
+    background-color: var(--pri);
+
+    h5,
+    p {
+        color: var(--whi);
+    }
+
+    /* nested styles will only target the elements inside of the container targeted */
+}
+
+.sec .collapse:nth-of-type(even) {
+    background-color: var(--pri);
+
+    h5,
+    p {
+        color: var(--whi);
+    }
+}
+
+.collapse h5 {
+    width: 100%;
+    margin: 2% 0;
+}
+
+.collapse h5::after {
+    /* adding a pesudo element after each h5 one time here so I won't have to add it to each and everyone in html */
+    content: url(../img/arrow.svg);
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    right: 1em;
+
+}
+
+.collapse .content {
+    display: none;
+    /* hide the content by default */
+}
+
+
+.collapse.open h5::after {
+    transform: rotate(180deg);
+    /* rotate the arrow whenever this class added in js*/
+}
+
+.collapse.open .content {
+    display: flex;
+    /* display the content whenever the class added in js */
+}
+
+.content {
+    flex-direction: column;
+    gap: 1em;
+}
+
+.content img {
+    object-fit: cover;
+    height: 15em;
+}
+
+.content button {
+    padding: .3em;
+}
+
+
+
+@media only screen and (min-width: 55em) {
+    /* DESKTOP | PROGRAMS PAGE */
+
+    .pro-pop {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .2fr 1fr .2fr;
+        align-items: center;
+    }
+
+    .pro-pop img {
+        grid-column: 2/3;
+        grid-row: 1/4;
+    }
+
+    .pro-pop h3 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        padding: 2% 5%;
+    }
+
+    .pro-pop h4 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        padding: 2% 5%;
+        height: auto;
+        align-self: self-start;
+    }
+
+    .pro-pop p {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin-left: 5%;
+    }
+
+    .pro-pop button {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .all-collapse {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
